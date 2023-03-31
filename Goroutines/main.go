@@ -2,30 +2,21 @@ package main
 
 import (
 	"fmt"
+	"time"
 )
 
 func main() {
-	// go greeter("hello")
-
-	// greeter("world")
+	go greeter("hello")
+	greeter("world")
 
 }
 
-// func greeter(s string) {
-// 	for i := 0; i < 6; i++ {
-// 		time.Sleep(1 * time.Second)
-// 		fmt.Println(s)
-// 	}
-// }
+func greeter(s string) {
 
-func getStatusCode(endpoint string) {
+	for i := 0; i < 6; i++ {
 
-	res, err := http.get(endpoint)
-
-	if err != nil {
-		fmt.Println("OOPS an error ")
+		time.Sleep(5 * time.Millisecond)
+		fmt.Println(s)
 
 	}
-	fmt.Println("%dstatus code for %s", res.StatusCode, endpoint)
-
 }

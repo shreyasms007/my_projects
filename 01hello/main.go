@@ -1,19 +1,17 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 func main() {
 
-	name := []int{1, 2, 3, 4, 5, 6}
-	for _, i := range name {
+	fmt.Println(factorial(7))
 
-		if i%2 == 0 {
-			fmt.Println(i, "is even number ")
-		} else {
-			fmt.Println(i, "is odd number")
-		}
+}
 
+func factorial(n int) int {
+
+	if n == 0 {
+		return 1
 	}
+	return n * factorial(n-1)
 }
